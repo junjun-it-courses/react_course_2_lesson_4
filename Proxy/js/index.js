@@ -10,16 +10,18 @@
 // которые перехватывают разные операции, например, ловушка get – для чтения
 // свойства из target, ловушка set – для записи свойства в target и так далее.
 
-// let target = {};
-// let proxy = new Proxy(target, {}); // пустой handler
-//
-// proxy.test = 5; // записываем в прокси (1)
+let target = {};
+let proxy = new Proxy(target, {}); // пустой handler
+
+proxy.test = 5; // записываем в прокси (1)
 // alert(target.test); // 5, свойство появилось в target!
 // alert(proxy.test); // 5, мы также можем прочитать его из прокси (2)
-//
+
 // for(let key in proxy) {
 //     console.log(key);
-// } // test, итерация работает (3)
+// }
+//
+// console.log(proxy)
 
 // Так как нет ловушек, то все операции на proxy применяются
 // к оригинальному объекту target.
